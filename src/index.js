@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { Provider } from 'react-redux';
+import { store} from './redux/store'
 import App from './App';
+import { app } from './fireabase.config';
+import 'react-toastify/dist/ReactToastify.css';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store} app={app}>
+     <App />
+  </Provider>
+ 
 );
 
 // If you want to start measuring performance in your app, pass a function
